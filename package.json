@@ -1,22 +1,20 @@
 {
   "name": "start",
   "version": "1.0.0",
-  "description": "",
   "main": "protractor.config.js",
   "scripts": {
     "prewd": "webdriver-manager update",
     "wd": "start webdriver-manager start",
-    "preStest" : "npm run wd",
+    "pretest": "npm run wd",
     "test": "protractor protractor.config"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "chai": "^4.1.1",
     "chai-as-promised": "^7.1.1",
     "cucumber": "2.3.*",
     "protractor": "^5.1.2",
-    "protractor-cucumber-framework": "^4.0.3"
+    "protractor-cucumber-framework": "^4.0.3",
+    "gulp": "^3.9.1",
+    "gulp-protractor": "^4.1.0"
   }
 }
