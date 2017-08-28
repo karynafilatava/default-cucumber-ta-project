@@ -12,13 +12,15 @@ exports.config = {
     },
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
+    baseUrl: 'https://vimeo.com/cameo',
     seleniumServer: 'http://localhost:4444/wd/hub',
     onPrepare: function () {
-        global.TIMEOUT = 30000;
+        global.TIMEOUT = 90000;
 
         const chai = require('chai');
+        global.should = chai.should();
         chai.use(require('chai-as-promised'));
-        global.should = chai.should;
+
         global.ec = protractor.ExpectedConditions;
     }
 };

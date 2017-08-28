@@ -5,7 +5,7 @@
   "scripts": {
     "prewd": "webdriver-manager update",
     "wd": "start webdriver-manager start",
-    "pretest": "npm run wd",
+    "prestest": "npm run wd",
     "test": "protractor protractor.config"
   },
   "dependencies": {
