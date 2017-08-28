@@ -1,14 +1,13 @@
 'use strict';
+const BasePage = require('./Basepage.po');
 
-class HomePage {
+class HomePage extends BasePage {
     constructor() {
-        const randomPrefix = 666;
-        // const randomPrefix = Math.floor((Math.random() * 1000) + 1);
-        this.logo = $('.topnav_desktop_logo');
+        super();
+
+        this.downloadButton = $('a.download');
         this.joinButton = element(by.partialLinkText('Join'));
         this.logInButton = element(by.partialLinkText('Log in'));
-        // this.joinButton = $('li[data-menu-id="join"]>a');
-        // this.logInButton = $('li[data-menu-id="login"]>a');
         this.joinEmailButton = $('input[value="Join with email"]');
         this.logInEmailButton = $('input[value="Log in with email"]');
 
@@ -21,28 +20,20 @@ class HomePage {
         this.emailLoginInput = this.logInForm.$('input#signup_email');
         this.passwordLoginInput = this.logInForm.$('input#login_password');
 
+        // const prefix = Math.floor((Math.random() * 10000) + 1);
+        const emailPrefix = 6336;
         this.data = {
             'firstLastNameInput': 'John Smith',
-            'emailInput': randomPrefix + 'test@gmail.com',
+            'emailInput': emailPrefix + 'test@gmail.com',
             'passwordInput': '1234qwer'
         };
-        this.signUpIndicator = $('#compare_grid');
+
+        this.pageIndicator = $('.topnav_desktop_logo');
         this.loggedIndicator = $('#topnav_menu_avatar');
     }
 
-    visit() {
-        browser.get(browser.baseUrl);
-        return browser.wait(ec.presenceOf(this.logo), TIMEOUT);
+    fillInput(input, form) {
+        return this[input + form + 'Input'].sendKeys(this.data[input + 'Input']);
     }
-
-    waitForVisible(elementName) {
-        return browser.wait(ec.visibilityOf(this[elementName]), TIMEOUT);
-    }
-
-    enterInput(input, form) {
-        return this.waitForVisible(input+form+'Input').then(() => this[input+form+'Input'].sendKeys(this.data[input+'Input']));
-    }
-
 }
-
 module.exports = HomePage;

@@ -1,13 +1,10 @@
 "use strict";
-var { defineSupportCode } = require('cucumber');
+const {defineSupportCode} = require('cucumber');
 
-defineSupportCode(function({ After }) {
+defineSupportCode(function ({After}) {
 
-    After(function() {
+    After(function () {
         return browser.executeScript('window.localStorage.clear();')
-            .then(function() {
-                browser.manage().deleteAllCookies();
-            });
+            .then(() => browser.manage().deleteAllCookies());
     });
-
 });

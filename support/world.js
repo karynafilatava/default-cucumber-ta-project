@@ -1,9 +1,9 @@
 "use strict";
 const {defineSupportCode} = require('cucumber');
-const HomePage = require('./po/homepage.po');
+const PageFactory = require('./po/pageFactory');
 
 function CustomWorld() {
-    this.homepage = new HomePage();
+    this.pageFactory = new PageFactory();
 }
 
 defineSupportCode(function ({setWorldConstructor, setDefaultTimeout}) {

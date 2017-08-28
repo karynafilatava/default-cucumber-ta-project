@@ -5,8 +5,12 @@
   "scripts": {
     "prewd": "webdriver-manager update",
     "wd": "start webdriver-manager start",
-    "prestest": "npm run wd",
-    "test": "protractor protractor.config"
+    "e2e:user": "npm run wd && protractor protractor.config --cucumberOpts.tags=@user",
+    "e2e:login": "npm run wd && protractor protractor.config --cucumberOpts.tags=@login",
+    "e2e:signup": "npm run wd && protractor protractor.config --cucumberOpts.tags=@signups",
+    "e2e:scroll": "npm run wd && protractor protractor.config --cucumberOpts.tags=@scroll",
+    "e2e:download": "npm run wd && protractor protractor.config --cucumberOpts.tags=@download",
+    "e2e": "npm run wd && protractor protractor.config --cucumberOpts.tags"
   },
   "dependencies": {
     "chai": "^4.1.1",
