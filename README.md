@@ -29,6 +29,6 @@ npm install
 
 Now you can run tests from local project directory *(default browser is chrome, all scenarios would be executed without using --tag)*:
 ```
-gulp [--tags=<tag>]
+gulp e2e [--tags=<tag>]
 ```
 Defined tags are @download, @scroll, @user, @signup, @login.
