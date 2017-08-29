@@ -3,7 +3,7 @@ const gulp = require('gulp');
 const protractor = require('gulp-protractor').protractor;
 const util = require('gulp-util');
 
-gulp.task('test', () => {
+gulp.task('e2e', () => {
     return gulp.src('./features/*.feature')
         .pipe(protractor({
             configFile: './protractor.config.js',
