@@ -21,7 +21,7 @@ class HomePage extends BasePage {
         this.passwordLoginInput = this.logInForm.$('input#login_password');
 
         // const prefix = Math.floor((Math.random() * 10000) + 1);
-        const emailPrefix = 6336;
+        const emailPrefix = 5859;
         this.data = {
             'firstLastNameInput': 'John Smith',
             'emailInput': emailPrefix + 'test@gmail.com',
