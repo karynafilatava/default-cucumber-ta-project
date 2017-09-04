@@ -10,7 +10,7 @@
     "e2e:signup": "npm run wd && protractor protractor.config --cucumberOpts.tags=@signups",
     "e2e:scroll": "npm run wd && protractor protractor.config --cucumberOpts.tags=@scroll",
     "e2e:download": "npm run wd && protractor protractor.config --cucumberOpts.tags=@download",
-    "e2e": "npm run wd && protractor protractor.config --cucumberOpts.tags"
+    "e2e": "protractor protractor.config --cucumberOpts.tags"
   },
   "dependencies": {
     "chai": "^4.1.1",
